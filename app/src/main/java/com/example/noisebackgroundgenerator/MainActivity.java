@@ -2,8 +2,12 @@ package com.example.noisebackgroundgenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,6 +19,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button=findViewById(R.id.button);//описали переменную и связали с кнопкой
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                EditText edit=findViewById(R.id.edit);
+                intent.putExtra("message",edit.getText());
+                startActivity(intent);
+            }
+        });
+
+         */
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Retrofit retrofit=new Retrofit.Builder()
@@ -34,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Sveta","Failure"+t);
             }
         });
+
+
 
 
     }
